@@ -1,5 +1,5 @@
 # aliceswNovelDownloadPlugin
-爱丽丝书屋网站的小说下载插件，适用于google浏览器，https://www.alicesw.com
+爱丽丝书屋网站的小说下载插件，仅适用于google浏览器，小说网址：https://www.alicesw.com
 
 # 小说下载插件（NovelDownloadPlugin）
 
