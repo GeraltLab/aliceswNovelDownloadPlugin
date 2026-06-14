@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "alicesw下载小说为txt格式",
+  "short_name": "alicesw下载小说为txt格式",
+  "version": "1.1.14",
+  "description": "在 alicesw.com 小说目录页提取章节并下载为 TXT（仅自用）",
+  "permissions": ["sidePanel", "storage", "downloads", "tabs", "activeTab", "scripting", "offscreen", "notifications"],
+  "host_permissions": ["https://www.alicesw.com/*"],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.alicesw.com/other/chapters/id/*"],
+      "js": ["content/catalog.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "action": {
+    "default_title": "alicesw下载小说为txt格式 — 打开章节列表"
+  }
+}

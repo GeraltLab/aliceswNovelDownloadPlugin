@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小说下载插件</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">alicesw下载小说为txt格式</h1>
+    <p id="novel-meta" class="meta">请打开 alicesw.com 的小说目录页</p>
+  </header>
+
+  <section class="toolbar">
+    <div class="btn-row">
+      <button type="button" id="btn-select-all" class="btn">全选</button>
+      <button type="button" id="btn-select-none" class="btn">取消全选</button>
+      <button type="button" id="btn-reload" class="btn">重新加载目录</button>
+    </div>
+    <div class="btn-row">
+      <button type="button" id="btn-download" class="btn btn-primary">下载</button>
+      <button type="button" id="btn-cancel" class="btn btn-danger" hidden>取消下载</button>
+    </div>
+  </section>
+
+  <section class="settings">
+    <h2 class="settings-title">下载设置</h2>
+    <label class="field">
+      <span>每章间隔（秒，最低 0.5）</span>
+      <input type="number" id="input-interval" min="0.5" step="0.1" value="0.5" />
+    </label>
+    <label class="field">
+      <span>每下载 N 章暂停</span>
+      <input type="number" id="input-batch-size" min="1" step="1" value="10" />
+    </label>
+    <label class="field">
+      <span>暂停时长 M（秒）</span>
+      <input type="number" id="input-batch-pause" min="0" step="1" value="5" />
+    </label>
+  </section>
+
+  <section id="progress-section" class="progress-section" hidden>
+    <div class="progress-bar-wrap">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <p id="progress-text" class="progress-text"></p>
+  </section>
+
+  <section id="status" class="status" role="status"></section>
+
+  <section class="chapter-list-wrap">
+    <ul id="chapter-list" class="chapter-list"></ul>
+  </section>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>

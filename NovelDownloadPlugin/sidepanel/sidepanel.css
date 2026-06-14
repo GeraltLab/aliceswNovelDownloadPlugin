@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: #f7f8fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #4a6cf7 0%, #6b4ce6 100%);
+  color: #fff;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.meta {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.92;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.toolbar,
+.settings,
+.progress-section,
+.status {
+  padding: 10px 14px;
+}
+
+.toolbar {
+  background: #fff;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.btn-row:last-child {
+  margin-bottom: 0;
+}
+
+.btn {
+  flex: 1;
+  min-width: 72px;
+  padding: 6px 8px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #4a6cf7;
+  border-color: #4a6cf7;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3d5ce0;
+}
+
+.btn-danger {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.settings {
+  background: #fff;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.settings-title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #444;
+}
+
+.field input {
+  padding: 6px 8px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.progress-section {
+  background: #fff;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.progress-bar-wrap {
+  height: 8px;
+  background: #e8eaed;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4a6cf7, #6b4ce6);
+  transition: width 0.2s ease;
+}
+
+.progress-text {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.status {
+  font-size: 12px;
+  color: #333;
+  min-height: 0;
+}
+
+.status:not(:empty) {
+  background: #fff8e6;
+  border-bottom: 1px solid #ffe08a;
+}
+
+.chapter-list-wrap {
+  flex: 1;
+  overflow: auto;
+  padding: 8px 10px 16px;
+}
+
+.chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chapter-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  background: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chapter-item:hover {
+  border-color: #c5cae9;
+  background: #fafbff;
+}
+
+.chapter-item input {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.chapter-title {
+  flex: 1;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.empty-hint {
+  padding: 24px 12px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+.empty-hint.success {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.modal-content {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.modal-close {
+  width: 100%;
+  padding: 10px 20px;
+  background: #4a6cf7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: #3d5ce0;
+}
